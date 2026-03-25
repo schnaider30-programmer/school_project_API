@@ -5,8 +5,8 @@ const docs = {
     title: "School API Documentation",
     description: "An API to retrieve student from database.",
   },
-  host: "localhost:8080",
-  schemes: ["http"],
+  host: "https://school-api-u7xc.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";

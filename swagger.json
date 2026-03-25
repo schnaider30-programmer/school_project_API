@@ -5,10 +5,10 @@
     "description": "An API to retrieve student from database.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://school-api-u7xc.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/students": {
@@ -201,7 +201,7 @@
                 "courseId": {
                   "example": "any"
                 },
-                "tile": {
+                "title": {
                   "example": "any"
                 },
                 "credits": {
@@ -271,7 +271,7 @@
                 "courseId": {
                   "example": "any"
                 },
-                "tile": {
+                "title": {
                   "example": "any"
                 },
                 "credits": {
