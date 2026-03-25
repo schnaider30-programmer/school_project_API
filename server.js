@@ -4,7 +4,7 @@ const { initDb } = require("./database/index");
 require("dotenv").config();
 const bodyParser = require("body-parser")
 
-PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json())
 app.use(
@@ -15,8 +15,8 @@ app.use(
 (async () => {
   try {
     await initDb();
-    app.listen(PORT, () => {
-      console.log(`🚀Server listenning on port ${PORT}`);
+    app.listen(port, () => {
+      console.log(`🚀Server listenning on port ${port}`);
     });
   } catch (error) {
     console.error("Server not started because DB connection failed:", error);
