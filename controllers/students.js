@@ -24,8 +24,7 @@ stud.getOneStudent = async (req, res) => {
 stud.getAllStudents = async (req, res) => {
   try {
     const result = await Student.find({});
-    console.log(result);
-    if (!result) {
+    if (result.length === 0) {
       res
         .status(404)
         .json({ message: "Couldn't retrieves students from database." });
@@ -42,8 +41,17 @@ stud.getAllStudents = async (req, res) => {
 stud.addStudent = async (req, res) => {
   try {
     // Validate request
-    if (!req.body.name) {
-      res.status(400).send({ message: "Content can not be empty!" });
+    if (
+      !req.body.studentID ||
+      !req.body.name ||
+      !req.body.email ||
+      !req.body.major ||
+      !req.body.year ||
+      !req.body.enrolledCourses ||
+      !req.body.status ||
+      !req.body.enrolledAt
+    ) {
+      res.status(400).send({ message: "Please check. No field should be empty!" });
       return;
     }
     const student = new Student({

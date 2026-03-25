@@ -42,7 +42,7 @@ course.addCourse = async (req, res) => {
   const { courseId, title, credits, instructor, semester } = req.body;
   try {
     // Validate request
-    if (!req.body.courseId) {
+    if (!courseId || !title || !credits || !instructor || !semester) {
       res.status(400).send({ message: "Content can not be empty!" });
       return;
     }
@@ -55,7 +55,7 @@ course.addCourse = async (req, res) => {
     });
 
     const result = await course.save(course);
-    res.send(`Great! Course was added. Result: \n${result}`);
+    res.status(201).send(`Great! Course was added. Result: \n${result}`);
   } catch (error) {
     res.status(500).send({
       message:
