@@ -5,7 +5,7 @@
     "description": "An API to retrieve student from database.",
     "version": "1.0.0"
   },
-  "host": "https://school-api-u7xc.onrender.com",
+  "host": "school-api-u7xc.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
