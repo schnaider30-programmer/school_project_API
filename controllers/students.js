@@ -14,7 +14,7 @@ stud.getOneStudent = async (req, res) => {
         message: `Student not found with id: ${req.params.id}`,
       });
     }
-    res.status(200).json({ sucess: true, status: 200, Result: `\n ${result}` });
+    res.status(200).json({ sucess: true, status: 200, result});
   } catch (error) {
     res.status(500).json({
       sucess: false,
@@ -37,7 +37,7 @@ stud.getAllStudents = async (req, res) => {
     }
     res
       .status(200)
-      .json({ success: true, status: 200, Result: `\n ${result}` });
+      .json({ success: true, status: 200, result});
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -84,7 +84,7 @@ stud.addStudent = async (req, res) => {
       success: true,
       status: 201,
       message: "A new student was successfully added to database",
-      result: result,
+      result,
     });
   } catch (error) {
     res.status(500).json({
@@ -140,7 +140,8 @@ stud.modifyStudentData = async (req, res) => {
       res.status(200).send({
         success: true,
         status: 200,
-        message: "Student was updated successfully.",
+        message: "Student was updated successfully.", 
+        result,
       });
     }
   } catch (error) {
