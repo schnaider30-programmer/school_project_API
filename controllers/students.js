@@ -137,11 +137,12 @@ stud.modifyStudentData = async (req, res) => {
           " was not found.",
       });
     } else {
+      const updateResult = await Student.findById(new ObjectId(id))
       res.status(200).send({
         success: true,
         status: 200,
         message: "Student was updated successfully.", 
-        result,
+        updateResult,
       });
     }
   } catch (error) {

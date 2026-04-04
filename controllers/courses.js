@@ -156,7 +156,7 @@ course.deteleCourse = async (req, res) => {
       });
     }
   } catch (error) {
-    res.starus(500).send({
+    res.status(500).send({
       success: false,
       status: 500,
       message: "An error occurs while deleting Course.",
